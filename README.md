@@ -84,7 +84,9 @@ Se analizará si los modelos de difusión pueden **generar datos sintéticos út
 📌 **Autor**: Alfonso Julián  
 👉 **Repositorio GitHub**: [TrabajoFinDeGrado](https://github.com/AlfonsoJulian/TFG)  
 📅 **Fecha**: 2024/2025  
-**Trabajo de investigacion previo del primer cuatri:** Se hace investigación de los modelos, de datasets, de cómo hacer inpainting y utilizar stable diffusion etc...
+😶‍🌫️ **Trabajo de investigacion previo del primer cuatri:** Se hace investigación de los modelos, de datasets, de cómo hacer inpainting y utilizar stable diffusion etc...
+
+    (No se añade a este repo por falta de espacio, los notebooks ocupan mucho)
 
     [Trabajo de investigacion previo del primer cuatri](https://github.com/AlfonsoJulian/TrabajoPrimerCuatriTFG)
 
