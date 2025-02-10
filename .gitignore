@@ -1,0 +1,21 @@
+# Datasets
+datasets/
+
+# Archivos temporales de Jupyter
+.ipynb_checkpoints/
+
+# Carpeta de dependencias de Python (si la usas)
+__pycache__/
+*.pyc
+
+# Configuración de entornos virtuales de Python/Conda
+venv/
+ENVTFG/
+*.conda
+
+# Archivos de logs
+logs/
+*.log
+
+*.zip
+
