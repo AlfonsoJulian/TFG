@@ -80,14 +80,27 @@ Es recomendable utilizar un entorno con:
 Se analizará si los modelos de difusión pueden **generar datos sintéticos útiles** para mejorar el rendimiento de los detectores de objetos. También se comparará su impacto frente a otras técnicas tradicionales de data augmentation.
 
 ---
+## 📌 **Autor**  
+**Alfonso Julián**  
 
-📌 **Autor**: Alfonso Julián  
-👉 **Repositorio GitHub**: [TrabajoFinDeGrado](https://github.com/AlfonsoJulian/TFG)  
-📅 **Fecha**: 2024/2025  
-😶‍🌫️ **Trabajo de investigacion previo del primer cuatri:** Se hace investigación de los modelos, de datasets, de cómo hacer inpainting y utilizar stable diffusion etc...
+## 📂 **Repositorio GitHub**  
+🔗 [TrabajoFinDeGrado](https://github.com/AlfonsoJulian/TFG)  
 
-    (No se añade a este repo por falta de espacio, los notebooks ocupan mucho)
+## 📅 **Periodo académico**  
+🗓️ 2024/2025  
 
-    [Trabajo de investigacion previo del primer cuatri](https://github.com/AlfonsoJulian/TrabajoPrimerCuatriTFG)
+## 📑 **Investigación previa (Primer Cuatrimestre)**  
+Durante el primer cuatrimestre, se llevó a cabo una investigación sobre:  
+- Modelos de detección de objetos.  
+- Conjuntos de datos (datasets) relevantes.  
+- Técnicas de **inpainting** y su aplicación en visión por computadora.  
+- Uso de **Stable Diffusion** y otros modelos generativos.  
+
+> ⚠️ *Debido a limitaciones de espacio, los notebooks de esta fase no están incluidos en este repositorio.*  
+
+Puedes acceder a ellos aquí:  
+🔗 [Trabajo de investigación previo del primer cuatrimestre](https://github.com/AlfonsoJulian/TrabajoPrimerCuatriTFG)  
+
+---
 
 📚 ¡Cualquier feedback o sugerencia es bienvenido! 🚀
