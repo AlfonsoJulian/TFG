@@ -82,7 +82,7 @@ Se analizará si los modelos de difusión pueden **generar datos sintéticos út
 ---
 
 📌 **Autor**: Alfonso Julián  
-👉 **Repositorio GitHub**: [TrabajoFinDeGrado](https://github.com/AlfonsoJulian/TFG.git)  
+👉 **Repositorio GitHub**: [TrabajoFinDeGrado](https://github.com/AlfonsoJulian/TFG)  
 📅 **Fecha**: 2024/2025  
 
 📚 ¡Cualquier feedback o sugerencia es bienvenido! 🚀
