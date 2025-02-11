@@ -17,7 +17,9 @@ ENVTFG/
 logs/
 *.log
 
+# Archivos zip
 *.zip
 
+# Imagenes
 *.png
 *.jpg
