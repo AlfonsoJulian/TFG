@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name Prueba                 # Nombre del proceso
+#SBATCH --job-name YOLO_COCO_DA                 # Nombre del proceso
 
 #SBATCH --partition dios   # Cola para ejecutar
 
@@ -19,4 +19,4 @@ conda activate /mnt/homeGPU/azapata/ENVTFG
 
 export TFHUB_CACHE_DIR=.
 
-python entrenamiento.py          
+python entrenamiento_DA.py          
