@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import datetime
 
 # 📌 **Definir rutas del dataset y archivo de resultados**
-dataset_yaml = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco20.yaml"
+dataset_yaml = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco20clasicaugmented.yaml"
 results_file = "results_yolo_classic_augmented.txt"  # Archivo para guardar los resultados
 
 # 📌 **Abrir archivo de resultados**
@@ -16,7 +16,7 @@ print("🚀 Cargando YOLOv8 desde cero...")
 model = YOLO('yolov8n.yaml')  # Para entrenar desde cero, usa un archivo .yaml
 
 # 📌 **Entrenar con el dataset aumentado**
-print("🚀 Iniciando el entrenamiento de YOLOv8 con el 20% del dataset COCO")
+print("🚀 Iniciando el entrenamiento de YOLOv8 con el 20% del dataset COCO más los datos con DA")
 try:
     train_results = model.train(
         data=dataset_yaml,     
