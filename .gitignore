@@ -23,3 +23,10 @@ logs/
 # Imagenes
 *.png
 *.jpg
+
+# Resultados de entrenamientos y llamadas al server
+*.out
+*.pt
+
+results_yolo_classic_augmented.txt
+runs/
