@@ -19,4 +19,4 @@ conda activate /mnt/homeGPU/azapata/ENVTFG
 
 export TFHUB_CACHE_DIR=.
 
-python entrenamiento_DA.py          
+python DA_ModelosDiffusion.py 
