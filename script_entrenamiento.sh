@@ -19,6 +19,5 @@ conda activate /mnt/homeGPU/azapata/ENVTFG
 
 export TFHUB_CACHE_DIR=.
 
-python CreateHibridDatasetDMCLA.py
-
+python DA_ModelosDiffusionSegunSize.py
 
