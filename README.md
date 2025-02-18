@@ -1,10 +1,10 @@
 # Trabajo Fin de Grado – Data Augmentation con Modelos de Difusión - Alfonso Julián Zapata Velasco
 
-Este repositorio contiene el código y los experimentos de mi Trabajo de Fin de Grado (TFG), cuyo objetivo es **evaluar si los modelos de difusión pueden mejorar la detección de objetos pequeños a través de data augmentation**.
+Este repositorio contiene el código y los experimentos de mi Trabajo de Fin de Grado (TFG), cuyo objetivo es **evaluar si los modelos de difusión pueden mejorar la detección de objetos a través de data augmentation**.
 
 ## 📌 Objetivo del Proyecto
 Este proyecto busca responder a la pregunta:  
-**¿Es posible mejorar la detección de objetos pequeños utilizando modelos de difusión para generar datos sintéticos?**  
+**¿Es posible mejorar la detección de objetos utilizando modelos de difusión para generar datos sintéticos?**  
 
 Para ello, trabajamos con **COCO**, y comparamos diferentes técnicas de data augmentation tradicionales frente a modelos generativos.
 
@@ -24,23 +24,25 @@ Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo d
 │   ├── fasterRCNN.ipynb # Notebook de pruebas y entender Faster R-CNN
 │   ├── yolo.ipynb       # Notebook de pruebas y entender YOLO
 │── 📁 nbCoco            # Notebooks relacionados con COCO
-│   ├── InvestigacionCoco.ipynb # Notebook trabajando, descargando y modificando coco
-│   ├── download_coco.py # Archivo para descargar el dataset (más de 300 mil imagenes)
+│   ├── InvestigacionCoco.ipynb # Notebook trabajando, descargando y modificando COCO
+│   ├── download_coco.py # Archivo para descargar el dataset (más de 300 mil imágenes)
 │── 📁 nbInpainting      # Notebooks de inpainting y modelos de difusión
 │   ├── inpainting.ipynb 
 │── 📁 nbVisDrone        # Notebooks de experimentación con VisDrone
 │   ├── TomaContactoVisDrone.ipynb
 │── 📁 experimentacion   # Notebooks de experimentación general y análisis y conclusiones de resultados
 │   ├── experimentacion.ipynb
-│── 📁 datasets          # Carpeta para almacenar datasets procesados (COCO, 20% COCO, 20% COCO + DA, 20% COCO + DA DM, 20% COCO + DA DM + DA, ...)
+│── 📁 datasets          # Carpeta para almacenar datasets procesados
 │── .gitignore          # Archivos ignorados por Git
 │── README.md           # Documentación principal del repositorio
-│── CreateHibridDatasetDMCLA.py  # Script para crear el dataset híbrido (20% COCO + DA clásico + DA DM)
-│── DA_ModelosDiffusion.py       # Data Augmentation con Diffusion Models (20% COCO + DA DM)
-│── DA_ModelosDiffusionSegunSize.py # DA adaptado según tamaño (20% COCO + DA DM inteligente (adapta el guidance y el strength según tamaño y dificultad de la clase))
+│── CreateHibridDatasetDMCLA.py  # Script para crear el dataset híbrido
+│── DA_ModelosDiffusion.py       # Data Augmentation con Diffusion Models
+│── DA_ModelosDiffusionSegunSize.py # DA adaptado según tamaño
 │── entrenamiento.py              # Script general de entrenamiento
 │── entrenamientoDAMD.py           # Entrenamiento con DA+DM
 │── entrenamiento_DA.py            # Entrenamiento con DA clásico
+│── entrenamiento_DAMD_segun_size.py # Entrenamiento con DA+DM según tamaño
+│── entrenamiento_DA_hibrid.py      # Entrenamiento con DA híbrido
 │── script_entrenamiento.sh        # Script para lanzar entrenamiento
 ```
 
@@ -53,12 +55,14 @@ Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo d
 - **`experimentacion/`** → Notebooks generales de experimentación.
 - **`datasets/`** → Datos procesados y preparados para entrenamiento.
 - **Scripts principales:**
-  - `CreateHibridDatasetDMCLA.py` → Generación de dataset híbrido con DA clásico y DM.
+  - `CreateHibridDatasetDMCLA.py` → Generación de dataset híbrido.
   - `DA_ModelosDiffusion.py` → Crear dataset de Data Augmentation con Modelos de Difusión.
-  - `DA_ModelosDiffusionSegunSize.py` → Crear dataset de DA DM adaptado según tamaño del objeto.
+  - `DA_ModelosDiffusionSegunSize.py` → Crear dataset de DA DM adaptado según tamaño.
   - `entrenamiento.py` → Script principal de entrenamiento.
   - `entrenamientoDAMD.py` → Entrenamiento con DA y DM.
   - `entrenamiento_DA.py` → Entrenamiento con DA clásico.
+  - `entrenamiento_DAMD_segun_size.py` → Entrenamiento con DA+DM según tamaño.
+  - `entrenamiento_DA_hibrid.py` → Entrenamiento con DA híbrido.
   - `script_entrenamiento.sh` → Script para ejecutar entrenamiento en servidor.
 
 ---
@@ -115,15 +119,6 @@ Se analizará si los modelos de difusión pueden **generar datos sintéticos út
 🗓️ 2024/2025  
 
 ## 📑 **Investigación previa (Primer Cuatrimestre)**  
-Durante el primer cuatrimestre, se llevó a cabo una investigación sobre:  
-- Modelos de detección de objetos.  
-- Conjuntos de datos (datasets) relevantes.  
-- Técnicas de **inpainting** y su aplicación en visión por computadora.  
-- Uso de **Stable Diffusion** y otros modelos generativos.  
-
-> ⚠️ *Debido a limitaciones de espacio, los notebooks de esta fase no están incluidos en este repositorio.*  
-
-Puedes acceder a ellos aquí:  
 🔗 [Trabajo de investigación previo del primer cuatrimestre](https://github.com/AlfonsoJulian/TrabajoPrimerCuatriTFG)  
 
 ---
