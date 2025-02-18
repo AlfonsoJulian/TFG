@@ -1,3 +1,22 @@
+# 1. **Strength (Fuerza de modificación)**
+#    - Define **cuánto cambia la imagen original** en la generación.
+#    - Valores cercanos a 0 mantienen la imagen original casi intacta.
+#    - Valores cercanos a 1 generan una imagen completamente nueva basada en el prompt.
+#    - En este código, el `strength` se ajusta según el tamaño del objeto:
+#      - **Objetos grandes (`> 9216 píxeles²`)** → `strength = 0.75` (más cambio, más detalles nuevos).
+#      - **Objetos medianos (`1024 - 9216 píxeles²`)** → `strength = 0.5` (modificación moderada).
+#      - **Objetos pequeños (`< 1024 píxeles²`)** → `strength = 0.25` (poca modificación para conservar detalles clave).
+
+# 2. **Guidance Scale (Escala de orientación)**
+#    - Controla **cuánto sigue el modelo el prompt textual**.
+#    - Valores altos hacen que la imagen generada siga más fielmente el prompt.
+#    - Valores bajos permiten más variabilidad y detalles del ruido de difusión.
+#    - En este código, el `guidance_scale` se ajusta según la dificultad de detección de la clase en los resultados previos:
+#      - **Clases fáciles (e.g., persona, coche, perro, tren)** → `guidance_scale = 7.0` (generación más detallada).
+#      - **Clases intermedias (e.g., semáforo, laptop, skate)** → `guidance_scale = 5.5` (balance entre precisión y variabilidad).
+#      - **Clases difíciles (e.g., tijeras, libro, mando a distancia, cepillo de dientes)** → `guidance_scale = 4.5` (permitiendo más variabilidad para mejorar).
+
+
 import os
 import shutil
 import cv2

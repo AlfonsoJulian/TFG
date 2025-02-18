@@ -8,7 +8,7 @@ Este proyecto busca responder a la pregunta:
 
 Para ello, trabajamos con **COCO**, y comparamos diferentes técnicas de data augmentation tradicionales frente a modelos generativos.
 
-Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo detrás no se ha podido incluir todo en uno. Llegado el momento, los notebooks importantes tendran IMPORTANTE<nombre> para mayor claridad ya que voy a incluir todo el trabajo que he hecho desde el inicio hasta la actualidad.
+Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo detrás no se ha podido incluir todo en uno. Llegado el momento, los notebooks importantes tendrán `IMPORTANTE_<nombre>` para mayor claridad ya que voy a incluir todo el trabajo que he hecho desde el inicio hasta la actualidad.
 
 ---
 
@@ -16,25 +16,50 @@ Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo d
 
 ```
 📁 TFG
-│── 📁 docs          # Documentación del proyecto
-│── 📁 modelos       # Pesos y configuraciones de modelos entrenados
-│── 📁 nbCoco        # Notebooks de procesamiento y experimentación con COCO
-│── 📁 nbInpainting  # Notebooks de experimentos con inpainting y difusión
-│── 📁 nbVisDrone    # Notebooks para la exploración del dataset VisDrone
-│── 📁 datasets      # Carpeta para almacenar datasets procesados
-│── 📁 VisDrone      # Datos originales de VisDrone
-│── .gitignore       # Archivos ignorados por Git
-│── README.md        # Documentación principal del repositorio
+│── 📁 docs              # Documentación y dependencias
+│   ├── environment.yml  # Configuración del entorno Conda
+│   ├── requirements.txt # Dependencias del proyecto
+│── 📁 modelos           # Modelos entrenados y configuraciones
+│   ├── SSD.ipynb        # Notebook de pruebas y entender SSD
+│   ├── fasterRCNN.ipynb # Notebook de pruebas y entender Faster R-CNN
+│   ├── yolo.ipynb       # Notebook de pruebas y entender YOLO
+│── 📁 nbCoco            # Notebooks relacionados con COCO
+│   ├── InvestigacionCoco.ipynb # Notebook trabajando, descargando y modificando coco
+│   ├── download_coco.py # Archivo para descargar el dataset (más de 300 mil imagenes)
+│── 📁 nbInpainting      # Notebooks de inpainting y modelos de difusión
+│   ├── inpainting.ipynb 
+│── 📁 nbVisDrone        # Notebooks de experimentación con VisDrone
+│   ├── TomaContactoVisDrone.ipynb
+│── 📁 experimentacion   # Notebooks de experimentación general y análisis y conclusiones de resultados
+│   ├── experimentacion.ipynb
+│── 📁 datasets          # Carpeta para almacenar datasets procesados (COCO, 20% COCO, 20% COCO + DA, 20% COCO + DA DM, 20% COCO + DA DM + DA, ...)
+│── .gitignore          # Archivos ignorados por Git
+│── README.md           # Documentación principal del repositorio
+│── CreateHibridDatasetDMCLA.py  # Script para crear el dataset híbrido (20% COCO + DA clásico + DA DM)
+│── DA_ModelosDiffusion.py       # Data Augmentation con Diffusion Models (20% COCO + DA DM)
+│── DA_ModelosDiffusionSegunSize.py # DA adaptado según tamaño (20% COCO + DA DM inteligente (adapta el guidance y el strength según tamaño y dificultad de la clase))
+│── entrenamiento.py              # Script general de entrenamiento
+│── entrenamientoDAMD.py           # Entrenamiento con DA+DM
+│── entrenamiento_DA.py            # Entrenamiento con DA clásico
+│── script_entrenamiento.sh        # Script para lanzar entrenamiento
 ```
 
-### 📂 **Descripción de las carpetas**
-- **`docs/`** → Documentación del TFG.
-- **`modelos/`** → Modelos entrenados y configuraciones.
+### 📂 **Descripción de las carpetas y archivos principales**
+- **`docs/`** → Documentación del TFG y dependencias.
+- **`modelos/`** → Modelos entrenados y configuraciones de SSD, Faster R-CNN y YOLO.
 - **`nbCoco/`** → Notebooks relacionados con COCO.
 - **`nbInpainting/`** → Notebooks de inpainting y modelos de difusión.
 - **`nbVisDrone/`** → Notebooks de experimentación con VisDrone.
+- **`experimentacion/`** → Notebooks generales de experimentación.
 - **`datasets/`** → Datos procesados y preparados para entrenamiento.
-- **`VisDrone/`** → Archivos originales del dataset VisDrone.
+- **Scripts principales:**
+  - `CreateHibridDatasetDMCLA.py` → Generación de dataset híbrido con DA clásico y DM.
+  - `DA_ModelosDiffusion.py` → Crear dataset de Data Augmentation con Modelos de Difusión.
+  - `DA_ModelosDiffusionSegunSize.py` → Crear dataset de DA DM adaptado según tamaño del objeto.
+  - `entrenamiento.py` → Script principal de entrenamiento.
+  - `entrenamientoDAMD.py` → Entrenamiento con DA y DM.
+  - `entrenamiento_DA.py` → Entrenamiento con DA clásico.
+  - `script_entrenamiento.sh` → Script para ejecutar entrenamiento en servidor.
 
 ---
 
@@ -46,7 +71,7 @@ Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo d
    - Aplicación de inpainting y generación de imágenes sintéticas.
 3. **Comparación de rendimiento**  
    - Evaluación de modelos con y sin data augmentation generativo.
-   - Evaluación de las diferentes aproximaciones con data augmentation generativo
+   - Evaluación de las diferentes aproximaciones con data augmentation generativo.
 4. **Análisis de métricas**  
    - Uso de las métricas de COCO para medir impacto.
 
