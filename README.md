@@ -81,6 +81,10 @@ Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo d
 
 ---
 
+[Acceso a hoja de cálculo con todas las métricas](https://docs.google.com/spreadsheets/d/1uJThcclY8D3tZknLSvSQ9C_NNmpMsnl4BrWVlNPsknM/edit?usp=sharing)
+
+---
+
 ## ⚙️ Instalación y Dependencias
 
 Para ejecutar los notebooks, instala las dependencias con:
