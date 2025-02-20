@@ -100,7 +100,7 @@ def get_non_overlapping_boxes(bboxes, iou_threshold):
 
 def determine_strength(w, h):
     size_category = classify_object_size(w, h)
-    return 0.75 if size_category == "large" else 0.5 if size_category == "medium" else 0.25
+    return 0.5 if size_category == "large" else 0.35 if size_category == "medium" else 0.15
 
 def adjust_guidance_scale(class_name):
     high_performance = {"person", "car", "dog", "bus", "train", "airplane", "elephant", "zebra", "giraffe"}
@@ -108,13 +108,13 @@ def adjust_guidance_scale(class_name):
     low_performance = {"boat", "traffic light", "bench", "bird", "backpack", "handbag", "tie", "suitcase", "baseball bat", "knife", "spoon", "toothbrush", "book", "scissors", "hair drier"}
     
     if class_name in high_performance:
-        return 7.0  # Mayor guidance para clases con buen desempeño
+        return 5.5  # Mayor guidance para clases con buen desempeño
     elif class_name in medium_performance:
-        return 5.5  # Ajuste intermedio
+        return 3.5  # Ajuste intermedio
     elif class_name in low_performance:
-        return 4.5  # Menor guidance para clases con bajo desempeño
+        return 1.5  # Menor guidance para clases con bajo desempeño
     else:
-        return 6.0  # Valor por defecto para clases no categorizadas
+        return 3.5  # Valor por defecto para clases no categorizadas
 
 def validate_augmentation(original_image, modified_image):
     original_gray = np.array(original_image.convert("L"))
@@ -142,14 +142,19 @@ for label_file in os.listdir(label_dir):
     image_file = label_file.replace(".txt", ".jpg")
     image_path = os.path.join(image_dir, image_file)
     label_path = os.path.join(label_dir, label_file)
+    
     if not os.path.exists(image_path):
         continue
+    
     image = cv2.imread(image_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     height, width, _ = image.shape
+    
     with open(label_path, "r") as f:
         lines = f.readlines()
+        
     bboxes = [(int(parts[0]), int((float(parts[1]) - float(parts[3]) / 2) * width), int((float(parts[2]) - float(parts[4]) / 2) * height), int(float(parts[3]) * width), int(float(parts[4]) * height)) for parts in (line.strip().split() for line in lines)]
+    
     iou_threshold = get_dynamic_iou_threshold(bboxes)
     non_overlapping_bboxes = get_non_overlapping_boxes(bboxes, iou_threshold)
     
@@ -160,9 +165,10 @@ for label_file in os.listdir(label_dir):
     # Generar y guardar imagen aumentada con prefijo
     if non_overlapping_bboxes:
         augmented_image = apply_diffusion(image, non_overlapping_bboxes)
+        
         if augmented_image and validate_augmentation(Image.fromarray(image), augmented_image):
             augmented_image.save(os.path.join(output_image_dir, f"aug_{image_file}"))
             with open(os.path.join(output_label_dir, f"aug_{label_file}"), "w") as f:
-                f.writelines(lines)
+                f.writelines(lines)        
 
 print("🚀 Data augmentation completado con almacenamiento estructurado.")
