@@ -19,5 +19,5 @@ conda activate /mnt/homeGPU/azapata/ENVTFG
 
 export TFHUB_CACHE_DIR=.
 
-python CreateDifficultDataset.py
+python CreateDifficultDatasetDADM.py
 
