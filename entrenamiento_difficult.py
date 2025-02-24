@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import datetime
 
 # 📌 **Definir rutas del dataset y archivo de resultados**
-dataset_yaml = "/mnt/homeGPU/azapata/TFG/datasets/coco/cocoDifficultDA.yaml"
+dataset_yaml = "/mnt/homeGPU/azapata/TFG/datasets/coco/cocoDifficult.yaml"
 results_file = "results_yolo_classic_augmented.txt"  # Archivo para guardar los resultados
 
 # 📌 **Abrir archivo de resultados**
