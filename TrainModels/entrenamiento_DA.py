@@ -52,7 +52,7 @@ try:
     # 📌 **Guardar métricas clave en el archivo**
     with open(results_file, "a") as f:
         f.write("="*50 + "\n")
-        f.write("📊 Resultados de la Evaluación\n")
+        f.write("📊 Resultados de la Evaluación de COCO 100% con DA\n")
         f.write(f"📊 Precisión (mAP@50): {metrics['metrics/mAP_50(B)']:.4f}\n")
         f.write(f"📊 Precisión (mAP@50-95): {metrics['metrics/mAP_50-95(B)']:.4f}\n")
         f.write("="*50 + "\n")

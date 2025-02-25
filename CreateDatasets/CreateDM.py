@@ -5,9 +5,9 @@ from PIL import Image
 from diffusers import StableDiffusionImg2ImgPipeline
 
 # 📌 Directorio de imágenes y etiquetas
-image_dir = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco_20/images/train2017"
-label_dir = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco_20/labels/train2017"
-output_dir = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco_20_DM_augmented"
+image_dir = "/mnt/homeGPU/azapata/TFG/datasets/coco/images/train2017"
+label_dir = "/mnt/homeGPU/azapata/TFG/datasets/coco/labels/train2017"
+output_dir = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco_100_DM"
 
 # 📌 Crear directorios de salida si no existen
 output_image_dir = os.path.join(output_dir, "images")
@@ -87,7 +87,7 @@ def apply_diffusion(image, bboxes):
         class_name = COCO_CLASSES.get(class_id, "object")
         cropped_image = image_pil.crop((x, y, x + w, y + h)).resize((512, 512))
         prompt = f"Ultra-realistic {class_name}, detailed, photorealistic"
-        generated_image = pipe(prompt=prompt, image=cropped_image, strength=0.4, guidance_scale=7, num_inference_steps=50).images[0]
+        generated_image = pipe(prompt=prompt, image=cropped_image, strength=0.35, guidance_scale=6.5, num_inference_steps=50).images[0]
         generated_resized = generated_image.resize((w, h))
         image_pil.paste(generated_resized, (x, y))
         modified = True
@@ -114,4 +114,4 @@ for label_file in os.listdir(label_dir):
             augmented_image.save(os.path.join(output_image_dir, f"aug_{image_file}"))
             with open(os.path.join(output_label_dir, f"aug_{label_file}"), "w") as f:
                 f.writelines(lines)
-print("🚀 Data augmentation completado con almacenamiento estructurado.")
+print("🚀 Create DM dataset con coco 100%.")
