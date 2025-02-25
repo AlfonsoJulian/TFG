@@ -84,6 +84,11 @@ def apply_diffusion(image, bboxes):
     image_pil = Image.fromarray(image)
     modified = False
     for class_id, x, y, w, h in bboxes:
+        # Verificar que las dimensiones sean válidas antes de recortar
+        if w <= 0 or h <= 0:
+            print(f"[WARNING] Bounding box con tamaño inválido: x={x}, y={y}, w={w}, h={h}, clase={class_id}")
+            continue
+        
         class_name = COCO_CLASSES.get(class_id, "object")
         cropped_image = image_pil.crop((x, y, x + w, y + h)).resize((512, 512))
         prompt = f"Ultra-realistic {class_name}, detailed, photorealistic"
