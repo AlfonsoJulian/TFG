@@ -19,4 +19,4 @@ conda activate /mnt/homeGPU/azapata/ENVTFG
 
 export TFHUB_CACHE_DIR=.
 
-python entrenamiento_difficult_DADM.py
+python MetricasDeEntrenamientos/convertCSV.py
