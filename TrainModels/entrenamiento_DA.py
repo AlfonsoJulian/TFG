@@ -2,12 +2,12 @@ from ultralytics import YOLO
 import datetime
 
 # 📌 **Definir rutas del dataset y archivo de resultados**
-dataset_yaml = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco20clasicaugmented.yaml"
+dataset_yaml = "/mnt/homeGPU/azapata/TFG/datasets/coco/coco_100_DA_classic.yaml"
 results_file = "results_yolo_classic_augmented.txt"  # Archivo para guardar los resultados
 
 # 📌 **Abrir archivo de resultados**
 with open(results_file, "w") as f:
-    f.write("🚀 Resultados del Fine-Tuning de YOLOv8\n")
+    f.write("🚀 Resultados del entrenamiento de YOLOv8 COCO100% DA classic\n")
     f.write(f"Fecha y hora de ejecución: {datetime.datetime.now()}\n")
     f.write("="*50 + "\n\n")
 
@@ -16,7 +16,7 @@ print("🚀 Cargando YOLOv8 desde cero...")
 model = YOLO('yolov8n.yaml')  # Para entrenar desde cero, usa un archivo .yaml
 
 # 📌 **Entrenar con el dataset aumentado**
-print("🚀 Iniciando el entrenamiento de YOLOv8 con el 20% del dataset COCO más los datos con DA")
+print("🚀 Iniciando el entrenamiento de YOLOv8 con el 100% del dataset COCO más los datos con DA classic")
 try:
     train_results = model.train(
         data=dataset_yaml,     
