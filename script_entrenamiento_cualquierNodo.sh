@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name ;)                 # Nombre del proceso
+#SBATCH --job-name W_DA_cl                 # Nombre del proceso
 
 #SBATCH --partition dios   # Cola para ejecutar
 
@@ -18,5 +18,4 @@ conda activate /home/azapata/.conda/envs/ENVTFG_AUX
 
 export TFHUB_CACHE_DIR=.
 
-python /mnt/homeGPU/azapata/TFG/datasets/gunsUGR/OD-WeaponDetection-master/Weapons_and_similar_handled_objects/Sohas_weapon-Detection-YOLOv5/obj_train_data/fineTunning.py
-
+python /mnt/homeGPU/azapata/TFG/CreateDatasets/Weapons/CreateDM.py
