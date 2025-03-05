@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name W_DA_cl                 # Nombre del proceso
+#SBATCH --job-name WfineTDA                 # Nombre del proceso
 
 #SBATCH --partition dios   # Cola para ejecutar
 
@@ -18,4 +18,4 @@ conda activate /home/azapata/.conda/envs/ENVTFG_AUX
 
 export TFHUB_CACHE_DIR=.
 
-python /mnt/homeGPU/azapata/TFG/CreateDatasets/Weapons/CreateDM.py
+python /mnt/homeGPU/azapata/TFG/TrainModels/Weapons/fineTunningDAclassic.py
