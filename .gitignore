@@ -13,6 +13,7 @@ venv/
 ENVTFG/
 *.conda
 
+
 # Archivos de logs
 logs/
 *.log
