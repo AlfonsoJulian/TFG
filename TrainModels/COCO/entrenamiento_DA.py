@@ -25,9 +25,19 @@ try:
         pretrained=False,
         device="cuda",
         # cache=True,  # Usa cache para mejorar la carga de datos
-        show=True
+        show=True,
+        augment=True,  # Habilita Data Augmentation nativo de YOLOv8  
+        hsv_h=0.015,  # Pequeña variación de tono  
+        hsv_s=0.7,  # Aumento de saturación  
+        hsv_v=0.4,  # Aumento de brillo  
+        flipud=0.2,  # Flipping vertical  
+        fliplr=0.5,  # Flipping horizontal  
+        mosaic=1.0,  # Habilita la técnica de Mosaic  
+        mixup=0.2,  # Habilita MixUp  
+        scale=0.5,  # Aumenta el escalado aleatorio  
+        translate=0.1  # Pequeña traslación aleatoria  
     )
-
+    
     # 📌 **Guardar hiperparámetros y resultados**
     with open(results_file, "a") as f:
         f.write("✅ Entrenamiento completado correctamente.\n")
