@@ -8,80 +8,96 @@ Este proyecto busca responder a la pregunta:
 
 Para ello, trabajamos con **COCO**, y comparamos diferentes técnicas de data augmentation tradicionales frente a modelos generativos.
 
-Hay que tener en cuenta que hay muchos notebooks ya que al haber mucho trabajo detrás no se ha podido incluir todo en uno. Llegado el momento, los notebooks importantes tendrán `IMPORTANTE_<nombre>` para mayor claridad ya que voy a incluir todo el trabajo que he hecho desde el inicio hasta la actualidad.
-
 ---
 
 ## 📂 Estructura del Repositorio
 
+
 ```
 📁 TFG
-│── 📁 docs              # Documentación y dependencias
-│   ├── environment.yml  # Configuración del entorno Conda
-│   ├── requirements.txt # Dependencias del proyecto
-│── 📁 modelos           # Modelos entrenados y configuraciones
-│   ├── SSD.ipynb        # Notebook de pruebas y entender SSD
-│   ├── fasterRCNN.ipynb # Notebook de pruebas y entender Faster R-CNN
-│   ├── yolo.ipynb       # Notebook de pruebas y entender YOLO
-│── 📁 nbCoco            # Notebooks relacionados con COCO
-│   ├── InvestigacionCoco.ipynb # Notebook trabajando, descargando y modificando COCO
-│   ├── download_coco.py # Archivo para descargar el dataset (más de 300 mil imágenes)
-│── 📁 nbInpainting      # Notebooks de inpainting y modelos de difusión
-│   ├── inpainting.ipynb 
-│── 📁 nbVisDrone        # Notebooks de experimentación con VisDrone
+│── 📁 CreateDatasets        # Scripts para crear nuevas versiones de los datasets originales
+│   ├── 📁 COCO
+│   │   ├── CreateDM.py             # Generación de datasets con Modelos de Difusión
+│   │   ├── CreateDM2.py            # Variación del dataset con Modelos de Difusión
+│   │   ├── CreateDMSegunSize.py    # DA+DM según tamaño del objeto
+│   │   ├── CreateDifficultDataset.py
+│   │   ├── CreateDifficultDatasetDADM.py
+│   │   ├── CreateHibridDatasetDMCLA.py
+│   ├── 📁 Weapons
+│   │   ├── CreateDM.py
+│   │   ├── CreateHibridDatasetDMCLA.py
+│
+│── 📁 datasets            # Almacena los datasets (no se incluye en GitHub por espacio)
+│   ├── 📁 COCO            # Original y versiones generadas con DA
+│   ├── 📁 Weapons         # Original y versiones generadas con DA
+│   ├── 📁 VisDrone        # Original y versiones generadas con DA
+│
+│── 📁 docs                # Documentación y dependencias del proyecto
+│   ├── environment.yml    # Configuración del entorno Conda
+│   ├── requirements.txt   # Dependencias del proyecto
+│
+│── 📁 experimentacion     # Notebooks de experimentación y análisis de métricas
+│   ├── experimentacion.ipynb      # Experimentos y métricas para COCO
+│   ├── GUNexperimentacion.ipynb   # Experimentos y métricas para Weapons
+│
+│── 📁 MetricasDeEntrenamientos  # Almacenamiento y conversión de métricas de entrenamiento
+│   ├── coco_20.txt, coco_20_DA_DM_segun_size.txt, ...
+│   ├── convertCSV.py            # Conversión de métricas a CSV
+│   ├── metricas_entrenamientos.xlsx
+│   ├── metricas_entrenamientos.csv
+│
+│── 📁 Modelos             # Evaluación de diferentes modelos de detección de objetos
+│   ├── SSD.ipynb          # Pruebas con SSD
+│   ├── fasterRCNN.ipynb   # Pruebas con Faster R-CNN
+│   ├── yolo.ipynb         # Pruebas con YOLO
+│
+│── 📁 nbCoco              # Scripts y notebooks para trabajar con COCO
+│   ├── InvestigacionCoco.ipynb   # Exploración de COCO
+│   ├── download_coco.py         # Script para descargar COCO
+│
+│── 📁 nbInpainting        # Investigación sobre modelos de difusión e inpainting
+│   ├── inpainting.ipynb
+│
+│── 📁 nbVisDrone          # Evaluación de Modelos de Difusión en VisDrone
 │   ├── TomaContactoVisDrone.ipynb
-│── 📁 experimentacion   # Notebooks de experimentación general y análisis y conclusiones de resultados
-│   ├── experimentacion.ipynb
-│── 📁 datasets          # Carpeta para almacenar datasets procesados
-│── .gitignore          # Archivos ignorados por Git
-│── README.md           # Documentación principal del repositorio
-│── CreateHibridDatasetDMCLA.py  # Script para crear el dataset híbrido
-│── DA_ModelosDiffusion.py       # Data Augmentation con Diffusion Models
-│── DA_ModelosDiffusionSegunSize.py # DA adaptado según tamaño
-│── entrenamiento.py              # Script general de entrenamiento
-│── entrenamientoDAMD.py           # Entrenamiento con DA+DM
-│── entrenamiento_DA.py            # Entrenamiento con DA clásico
-│── entrenamiento_DAMD_segun_size.py # Entrenamiento con DA+DM según tamaño
-│── entrenamiento_DA_hibrid.py      # Entrenamiento con DA híbrido
-│── script_entrenamiento.sh        # Script para lanzar entrenamiento
+│
+│── 📁 TrainModels         # Scripts para lanzar entrenamientos con diferentes variantes de DA
+│   ├── 📁 COCO
+│   │   ├── entrenamiento.py
+│   │   ├── entrenamientoDAMD.py
+│   │   ├── entrenamiento_DA.py
+│   │   ├── entrenamiento_DAMD_segun_size.py
+│   │   ├── entrenamiento_DA_hibrid.py
+│   │   ├── entrenamiento_difficult.py
+│   │   ├── entrenamiento_difficult_DADM.py
+│   ├── 📁 Weapons
+│   │   ├── fineTunningDADM.py
+│   │   ├── fineTunningDAclassic.py
+│   │   ├── fineTunningOG.py
+│
+│── script_entrenamiento.sh          # Script para lanzar entrenamientos en Dionisio
+│── script_entrenamiento_cualquierNodo.sh # Script para lanzar entrenamientos en Atenea
+│── README.md                         # Documentación principal del repositorio
 ```
 
-### 📂 **Descripción de las carpetas y archivos principales**
-- **`docs/`** → Documentación del TFG y dependencias.
-- **`modelos/`** → Modelos entrenados y configuraciones de SSD, Faster R-CNN y YOLO.
-- **`nbCoco/`** → Notebooks relacionados con COCO.
-- **`nbInpainting/`** → Notebooks de inpainting y modelos de difusión.
-- **`nbVisDrone/`** → Notebooks de experimentación con VisDrone.
-- **`experimentacion/`** → Notebooks generales de experimentación.
-- **`datasets/`** → Datos procesados y preparados para entrenamiento.
-- **Scripts principales:**
-  - `CreateHibridDatasetDMCLA.py` → Generación de dataset híbrido.
-  - `DA_ModelosDiffusion.py` → Crear dataset de Data Augmentation con Modelos de Difusión.
-  - `DA_ModelosDiffusionSegunSize.py` → Crear dataset de DA DM adaptado según tamaño.
-  - `entrenamiento.py` → Script principal de entrenamiento.
-  - `entrenamientoDAMD.py` → Entrenamiento con DA y DM.
-  - `entrenamiento_DA.py` → Entrenamiento con DA clásico.
-  - `entrenamiento_DAMD_segun_size.py` → Entrenamiento con DA+DM según tamaño.
-  - `entrenamiento_DA_hibrid.py` → Entrenamiento con DA híbrido.
-  - `script_entrenamiento.sh` → Script para ejecutar entrenamiento en servidor.
 
 ---
 
 ## 🔬 Metodología
 
 1. **Entrenamiento de modelos de detección de objetos**  
-   - YOLO, Faster R-CNN, SSD sobre COCO y VisDrone.
+   - YOLO, Faster R-CNN, SSD sobre COCO, VisDrone y Weapons.
 2. **Generación de datos sintéticos con modelos de difusión**  
    - Aplicación de inpainting y generación de imágenes sintéticas.
 3. **Comparación de rendimiento**  
    - Evaluación de modelos con y sin data augmentation generativo.
    - Evaluación de las diferentes aproximaciones con data augmentation generativo.
 4. **Análisis de métricas**  
-   - Uso de las métricas de COCO para medir impacto.
+   - Uso de las métricas para medir impacto.
 
 ---
 
-[Acceso a hoja de cálculo con todas las métricas](https://docs.google.com/spreadsheets/d/1uJThcclY8D3tZknLSvSQ9C_NNmpMsnl4BrWVlNPsknM/edit?usp=sharing)
+[Acceso a hoja de cálculo con todas las métricas ACTUALIZAR ESTO](ACTUALIZAR ESTO)
 
 ---
 
