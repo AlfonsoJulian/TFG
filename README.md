@@ -38,7 +38,7 @@ Para ello, trabajamos con **COCO**, y comparamos diferentes técnicas de data au
 │
 │── 📁 experimentacion     # Notebooks de experimentación y análisis de métricas
 │   ├── experimentacion.ipynb      # Experimentos y métricas para COCO
-│   ├── GUNexperimentacion.ipynb   # Experimentos y métricas para Weapons
+│   ├── GUNexperimentacion.ipynb   # Experimentos y métricas para Weapons ⭐
 │
 │── 📁 MetricasDeEntrenamientos  # Almacenamiento y conversión de métricas de entrenamiento
 │   ├── coco_20.txt, coco_20_DA_DM_segun_size.txt, ...
