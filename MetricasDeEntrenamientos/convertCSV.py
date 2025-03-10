@@ -20,7 +20,7 @@ def parse_metrics(file_path):
     return df
 
 # Carpeta donde están almacenados los archivos de métricas
-metrics_folder = "/mnt/homeGPU/azapata/TFG/MetricasDeEntrenamientos/"
+metrics_folder = "/mnt/homeGPU/azapata/TFG/MetricasDeEntrenamientos/coco20"
 
 # Crear un DataFrame vacío para almacenar todos los datos
 all_metrics = pd.DataFrame()
@@ -33,8 +33,8 @@ for file in os.listdir(metrics_folder):
         all_metrics = pd.concat([all_metrics, df_metrics], ignore_index=True)
 
 # Guardar en CSV y Excel
-csv_output = "metricas_entrenamientos.csv"
-excel_output = "metricas_entrenamientos.xlsx"
+csv_output = "/mnt/homeGPU/azapata/TFG/MetricasDeEntrenamientos/coco20/metricas_entrenamientos.csv"
+excel_output = "/mnt/homeGPU/azapata/TFG/MetricasDeEntrenamientos/coco20/metricas_entrenamientos.xlsx"
 
 all_metrics.to_csv(csv_output, index=False)
 all_metrics.to_excel(excel_output, index=False)
