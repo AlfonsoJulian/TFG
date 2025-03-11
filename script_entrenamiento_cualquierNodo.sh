@@ -18,4 +18,4 @@ conda activate /home/azapata/.conda/envs/ENVTFG_AUX
 
 export TFHUB_CACHE_DIR=.
 
-python /mnt/homeGPU/azapata/TFG/MetricasDeEntrenamientos/convertCSV.py
+python /mnt/homeGPU/azapata/TFG/datasets/VOC/download_voc.py
