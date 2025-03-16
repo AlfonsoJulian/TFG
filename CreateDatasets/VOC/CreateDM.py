@@ -5,8 +5,18 @@ from PIL import Image
 from diffusers import StableDiffusionImg2ImgPipeline
 
 # 📌 Directorio de imágenes y etiquetas
-image_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/images/train2012"
-label_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/labels/train2012"
+# image_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/images/train2012"
+# label_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/labels/train2012"
+
+# image_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/images/train2007"
+# label_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/labels/train2007"
+
+# image_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/images/val2012"
+# label_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/labels/val2012"
+
+image_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/images/val2007"
+label_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/labels/val2007"
+
 output_dir = "/mnt/homeGPU/azapata/TFG/datasets/VOC/VOC_DM"
 
 # 📌 Crear directorios de salida si no existen

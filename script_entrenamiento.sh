@@ -19,6 +19,6 @@ conda activate /mnt/homeGPU/azapata/ENVTFG
 
 export TFHUB_CACHE_DIR=.
 
-python /mnt/homeGPU/azapata/TFG/TrainModels/Weapons/fineTunningDADM.py
+python /mnt/homeGPU/azapata/TFG/TrainModels/COCO/entrenamientoDAMD.py
 
 # python /mnt/homeGPU/azapata/TFG/CreateDatasets/CreateDAclassic.py

@@ -12,7 +12,7 @@ def main():
     # Configuración de entrenamiento
     # Configuración de entrenamiento
     model.train(
-        data="/mnt/homeGPU/azapata/TFG/datasets/VOC/VOC.yaml",
+        data="/mnt/homeGPU/azapata/TFG/datasets/VOC/VOC_DM.yaml",
         epochs=50,  # Ajusta según necesidad
         batch=2,  # Reduce si hay problemas de memoria
         device="cuda",  # Entrenamiento en GPU

@@ -21,7 +21,7 @@ try:
     train_results = model.train(
         data=dataset_yaml,     
         epochs=50,
-        batch=32,  # Ajustar según VRAM
+        batch=8,  # Ajustar según VRAM
         pretrained=False,
         device="cuda",
         # cache=True,  # Usa cache para mejorar la carga de datos
@@ -34,7 +34,7 @@ try:
         f.write("📌 Hiperparámetros utilizados:\n")
         f.write(f"- Dataset: {dataset_yaml}\n")
         f.write(f"- Épocas: 50\n")
-        f.write(f"- Batch Size: 32\n")  # Antes estaba mal puesto como 16
+        f.write(f"- Batch Size: 16\n")  # Antes estaba mal puesto como 16
         f.write(f"- Modelo Preentrenado: No\n")
         f.write(f"- Dispositivo: CUDA\n\n")
 

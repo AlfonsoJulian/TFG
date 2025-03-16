@@ -18,4 +18,5 @@ conda activate /home/azapata/.conda/envs/ENVTFG_AUX
 
 export TFHUB_CACHE_DIR=.
 
-python /mnt/homeGPU/azapata/TFG/TrainModels/COCO/entrenamientoDAMD.py
+# python /mnt/homeGPU/azapata/TFG/TrainModels/VOC/fineTunningDADM.py
+python /mnt/homeGPU/azapata/TFG/TrainModels/VOC/fineTunningHibrid.py
