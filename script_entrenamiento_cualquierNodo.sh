@@ -20,3 +20,4 @@ export TFHUB_CACHE_DIR=.
 
 # python /mnt/homeGPU/azapata/TFG/TrainModels/VOC/fineTunningDADM.py
 python /mnt/homeGPU/azapata/TFG/TrainModels/VOC/fineTunningHibrid.py
+# python /mnt/homeGPU/azapata/TFG/CreateDatasets/VOC/CopyFiles.py
