@@ -19,6 +19,6 @@ conda activate /mnt/homeGPU/azapata/ENVTFG
 
 export TFHUB_CACHE_DIR=.
 
-python /mnt/homeGPU/azapata/TFG/MetricasDeEntrenamientos/convertCSV.py
+python /mnt/homeGPU/azapata/TFG/CreateDatasets/COCO/coco20/CreateDM.py
 
 # python /mnt/homeGPU/azapata/TFG/CreateDatasets/CreateDAclassic.py
