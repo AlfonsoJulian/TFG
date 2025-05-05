@@ -62,6 +62,7 @@ except Exception as e:
     with open(results_file, "a") as f:
         f.write(f"❌ Error en la evaluación: {e}\n")
     print(f"❌ Error en la evaluación: {e}")
+    
 
 # 📌 **Confirmación final**
 print(f"📄 Resultados guardados en {results_file}")
