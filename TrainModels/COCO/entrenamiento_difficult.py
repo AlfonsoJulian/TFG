@@ -16,6 +16,7 @@ print("🚀 Cargando YOLOv8 desde cero...")
 model = YOLO('yolov8n.yaml')  # Para entrenar desde cero, usa un archivo .yaml
 
 # 📌 **Entrenar con el dataset aumentado**
+
 print("🚀 Iniciando el entrenamiento de YOLOv8 con el 20% del dataset COCO más los datos con DA")
 try:
     train_results = model.train(
