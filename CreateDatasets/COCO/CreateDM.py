@@ -18,6 +18,7 @@ os.makedirs(output_label_dir, exist_ok=True)
 # 📌 Cargar el modelo de difusión
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
+
 torch.cuda.init()
 print(torch.cuda.is_available())  # Debe devolver True 
 # Verificar si CUDA está disponible
