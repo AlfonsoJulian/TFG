@@ -45,6 +45,7 @@ def copy_images(selected_images):
 
         if os.path.exists(src_path):
             shutil.copy(src_path, dest_path)
+            
 
 # Ejecutar el filtrado
 selected_images = filter_labels()

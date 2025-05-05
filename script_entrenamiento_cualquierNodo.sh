@@ -23,4 +23,3 @@ export TFHUB_CACHE_DIR=.
 # python /mnt/homeGPU/azapata/TFG/TrainModels/COCO20/fineTunningHibrid.py
 # python /mnt/homeGPU/azapata/TFG/TrainModels/COCO20/fineTunningOG.py
 
-python /mnt/homeGPU/azapata/TFG/MetricasDeEntrenamientos/convertCSV.py
