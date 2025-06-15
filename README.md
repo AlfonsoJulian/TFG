@@ -156,30 +156,35 @@ Es recomendable utilizar un entorno con:
 ---
 ## 🧠 Valor del Proyecto
 
-Más allá de los resultados numéricos obtenidos, el verdadero valor de este Trabajo Fin de Grado radica en el **trabajo de experimentación e investigación exhaustiva** necesario para desarrollar un pipeline funcional como el que aquí se propone.
+Más allá de los resultados numéricos obtenidos, el verdadero valor de este Trabajo Fin de Grado radica en el **trabajo de experimentación e investigación exhaustiva** que ha sido necesario para construir un pipeline funcional, robusto y validado empíricamente.
 
 El diseño, implementación y validación de un sistema de data augmentation basado en modelos de difusión no es una tarea trivial. Implica:
 
 - 📊 Analizar el comportamiento de distintos modelos de detección frente a datos clásicos y sintéticos.
-- 🔄 Adaptar los pipelines de entrenamiento para que acepten imágenes generadas artificialmente.
-- 🧪 Lanzar múltiples experimentos con datasets variados, ajustando hiperparámetros y estrategias de entrenamiento.
-- 🧱 Desarrollar código robusto y reutilizable para tareas críticas como la generación, conversión y evaluación de datos.
+- 🔄 Adaptar y flexibilizar los pipelines de entrenamiento para trabajar con imágenes generadas artificialmente.
+- 🧪 Ejecutar múltiples experimentos con distintos datasets, afinando hiperparámetros y evaluando con rigor.
+- 🧱 Desarrollar código sólido y reutilizable para tareas críticas como la generación, conversión y evaluación de datos.
 
-Este proceso ha requerido **horas de pruebas, ajustes finos, resolución de errores y análisis de resultados**. En particular, la experimentación ha sido una de las partes más exigentes: cada entrenamiento consume recursos computacionales significativos y obliga a gestionar eficientemente el tiempo y la infraestructura.
-Por todo ello, este proyecto no solo aporta una solución funcional, sino que también refleja **la capacidad de llevar una idea compleja desde su concepción hasta su validación empírica**, pasando por todas las etapas intermedias de diseño, desarrollo y análisis crítico.
----
-## 📌 **Autor**  
-**Alfonso Julián**  
+Este proceso ha requerido **horas de pruebas, iteraciones, ajustes finos y resolución de errores**, con una alta exigencia técnica y una planificación cuidadosa del uso de recursos computacionales. En particular, la parte experimental ha sido un desafío clave, tanto por la complejidad del pipeline como por la necesidad de **gestionar eficientemente el tiempo y la infraestructura disponible**.
 
-## 📂 **Repositorio GitHub**  
-🔗 [TrabajoFinDeGrado](https://github.com/AlfonsoJulian/TFG)  
-
-## 📅 **Periodo académico**  
-🗓️ 2024/2025  
-
-## 📑 **Investigación previa (Primer Cuatrimestre) Repositorio en sucio :) **  
-🔗 [Trabajo de investigación previo del primer cuatrimestre](https://github.com/AlfonsoJulian/TrabajoPrimerCuatriTFG)  
+Por todo ello, este proyecto no solo aporta una solución técnica viable, sino que representa **la madurez para llevar una idea compleja desde su concepción hasta su validación práctica**, atravesando todas las etapas del ciclo de vida de un proyecto de investigación aplicada en IA.
 
 ---
 
-📚 ¡Cualquier feedback o sugerencia es bienvenido! 🚀
+## 👤 Autor  
+**Alfonso Julián Zapata Velasco**
+
+## 🗂️ Repositorio principal  
+🔗 [github.com/AlfonsoJulian/TFG](https://github.com/AlfonsoJulian/TFG)
+
+## 🗓️ Periodo académico  
+**Curso 2024 / 2025**  
+
+## 🧪 Investigación previa (Primer cuatrimestre)  
+Repositorio con experimentación inicial y exploraciones preliminares:  
+🔗 [Trabajo de investigación previo](https://github.com/AlfonsoJulian/TrabajoPrimerCuatriTFG)
+
+---
+
+📬 *¡Cualquier feedback o sugerencia es bienvenido!*  
+🚀 *Gracias por leer hasta aquí.*  
