@@ -2,11 +2,29 @@
 
 Este repositorio contiene el código y los experimentos de mi Trabajo de Fin de Grado (TFG), cuyo objetivo es **evaluar si los modelos de difusión pueden mejorar la detección de objetos a través de data augmentation**.
 
+Ejemplo de Forward process en Diffusion Models.
+![DiffusionModel](https://aaronlou.com/assets/img/blog/refldiff/perturb_vp.gif)
+
+Ejemplo de Reverse process en Diffusion Models.
+![DiffusionModel](https://aaronlou.com/assets/img/blog/refldiff/denoise_vp.gif)
+
+Gifts obtenidos de: https://aaronlou.com/blog/2023/reflected-diffusion/
+
+
 ## 📌 Objetivo del Proyecto
 Este proyecto busca responder a la pregunta:  
 **¿Es posible mejorar la detección de objetos utilizando modelos de difusión para generar datos sintéticos?**  
 
-Para ello, trabajamos con **COCO**, y comparamos diferentes técnicas de data augmentation tradicionales frente a modelos generativos.
+
+
+
+
+Para ello proponemos el siguiente pipeline:
+
+
+Para ello, trabajamos con diferentes datasets, y comparamos diferentes técnicas de data augmentation tradicionales frente a modelos generativos.
+
+
 
 ---
 
