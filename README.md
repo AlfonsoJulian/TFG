@@ -86,95 +86,49 @@ El enfoque híbrido propuesto demuestra que la combinación de estrategias clás
 
 ---
 
-## 📂 Estructura del Repositorio
+## 📂 Estructura del Repositorio (Hay carpetas como los datasets que no están subidos debido a cuestiones de almacenamiento en github)
 
- 
 ```
 📁 TFG
-│── 📁 CreateDatasets        # Scripts para crear nuevas versiones de los datasets originales
-│   ├── 📁 COCO
-│   │   ├── CreateDM.py             # Generación de datasets con Modelos de Difusión
-│   │   ├── CreateDM2.py            # Variación del dataset con Modelos de Difusión
-│   │   ├── CreateDMSegunSize.py    # DA+DM según tamaño del objeto
-│   │   ├── CreateDifficultDataset.py
-│   │   ├── CreateDifficultDatasetDADM.py
-│   │   ├── CreateHibridDatasetDMCLA.py
-│   ├── 📁 Weapons
-│   │   ├── CreateDM.py
-│   │   ├── CreateHibridDatasetDMCLA.py
-│
-│── 📁 datasets            # Almacena los datasets (no se incluye en GitHub por espacio)
-│   ├── 📁 COCO            # Original y versiones generadas con DA
-│   ├── 📁 Weapons         # Original y versiones generadas con DA
-│   ├── 📁 VisDrone        # Original y versiones generadas con DA
-│
-│── 📁 docs                # Documentación y dependencias del proyecto
-│   ├── environment.yml    # Configuración del entorno Conda
-│   ├── requirements.txt   # Dependencias del proyecto
-│
-│── 📁 experimentacion     # Notebooks de experimentación y análisis de métricas
-│   ├── experimentacion.ipynb      # Experimentos y métricas para COCO
-│   ├── GUNexperimentacion.ipynb   # Experimentos y métricas para Weapons ⭐
-│
-│── 📁 MetricasDeEntrenamientos  # Almacenamiento y conversión de métricas de entrenamiento
-│   ├── coco_20.txt, coco_20_DA_DM_segun_size.txt, ...
-│   ├── convertCSV.py            # Conversión de métricas a CSV
-│   ├── metricas_entrenamientos.xlsx
-│   ├── metricas_entrenamientos.csv
-│
-│── 📁 Modelos             # Evaluación de diferentes modelos de detección de objetos
-│   ├── SSD.ipynb          # Pruebas con SSD
-│   ├── fasterRCNN.ipynb   # Pruebas con Faster R-CNN
-│   ├── yolo.ipynb         # Pruebas con YOLO
-│
-│── 📁 nbCoco              # Scripts y notebooks para trabajar con COCO
-│   ├── InvestigacionCoco.ipynb   # Exploración de COCO
-│   ├── download_coco.py         # Script para descargar COCO
-│
-│── 📁 nbInpainting        # Investigación sobre modelos de difusión e inpainting
-│   ├── inpainting.ipynb
-│
-│── 📁 nbVisDrone          # Evaluación de Modelos de Difusión en VisDrone
-│   ├── TomaContactoVisDrone.ipynb
-│
-│── 📁 TrainModels         # Scripts para lanzar entrenamientos con diferentes variantes de DA
-│   ├── 📁 COCO
-│   │   ├── entrenamiento.py
-│   │   ├── entrenamientoDAMD.py
-│   │   ├── entrenamiento_DA.py
-│   │   ├── entrenamiento_DAMD_segun_size.py
-│   │   ├── entrenamiento_DA_hibrid.py
-│   │   ├── entrenamiento_difficult.py
-│   │   ├── entrenamiento_difficult_DADM.py
-│   ├── 📁 Weapons
-│   │   ├── fineTunningDADM.py
-│   │   ├── fineTunningDAclassic.py
-│   │   ├── fineTunningOG.py
-│
-│── script_entrenamiento.sh          # Script para lanzar entrenamientos en Dionisio
-│── script_entrenamiento_cualquierNodo.sh # Script para lanzar entrenamientos en Atenea
-│── README.md                         # Documentación principal del repositorio
+├── 📁 CreateDatasets               # Scripts de creación de datasets con y sin difusión
+├── 📁 ImagenesGit                 # Imágenes ilustrativas usadas en el README
+├── 📁 MetricasDeEntrenamientos    # Resultados numéricos y métricas finales de los experimentos
+├── 📁 TrainModels                 # Scripts de entrenamiento con diferentes variantes de DA
+├── 📁 docs                        # Archivos de entorno y dependencias (environment.yml, requirements.txt)
+├── 📁 experimentacion             # Notebooks con evaluación y visualización de resultados
+├── 📁 modelos                     # Pruebas con SSD, Faster R-CNN y YOLO
+├── 📁 nbCoco                      # Exploración del dataset COCO y descarga
+├── 📁 nbInpainting                # Evaluación de modelos de difusión con tareas de inpainting
+├── 📁 nbVisDrone                  # Experimentos preliminares con VisDrone (descartado)
+├── 📄 .gitignore                  # Exclusión de carpetas pesadas y temporales
+├── 📄 README.md                   # Documentación principal del repositorio
+├── 📄 script_entrenamiento.sh     # Script para lanzar entrenamientos en Dionisio
+└── 📄 script_entrenamiento_cualquierNodo.sh  # Script para lanzamientos flexibles en Atenea
 ```
+## 📂 Archivos importantes
 
+### 🧬 Generación de datos sintéticos
 
----
+Archivo principal para aplicar data augmentation basado en modelos de difusión sobre cualquier dataset:
+   `/mnt/homeGPU/azapata/TFG/CreateDatasets/COCO/coco20/CreateDM.py`
 
-## 🔬 Metodología
+### 🏋️‍♂️ Entrenamiento de modelos con distintas configuraciones de DA
 
-1. **Entrenamiento de modelos de detección de objetos**  
-   - YOLO, Faster R-CNN, SSD sobre COCO, VisDrone y Weapons.
-2. **Generación de datos sintéticos con modelos de difusión**  
-   - Aplicación de inpainting y generación de imágenes sintéticas.
-3. **Comparación de rendimiento**  
-   - Evaluación de modelos con y sin data augmentation generativo.
-   - Evaluación de las diferentes aproximaciones con data augmentation generativo.
-4. **Análisis de métricas**  
-   - Uso de las métricas para medir impacto.
+Scripts para lanzar los entrenamientos con distintas estrategias:
 
----
+- **Clásico (Classic DA)**  
+  `TFG/TrainModels/COCO20/fineTunningDAclassic.py`
 
-[Acceso a hoja de cálculo con todas las métricas ACTUALIZAR ESTO](ACTUALIZAR ESTO)
+- **Modelos de Difusión (DADM)**  
+  `TFG/TrainModels/COCO20/fineTunningDADM.py`
 
+- **Híbrido (Classic + DADM)**  
+  `TFG/TrainModels/COCO20/fineTunningHibrid.py`
+
+- **Original (sin data augmentation)**  
+  `TFG/TrainModels/COCO20/fineTunningOG.py`
+
+Nota:    
 ---
 
 ## ⚙️ Instalación y Dependencias
@@ -200,10 +154,20 @@ Es recomendable utilizar un entorno con:
 - SciPy y Scikit-learn (para análisis estadístico y preprocesamiento)
 
 ---
+## 🧠 Valor del Proyecto
 
-## 📀 Resultados Esperados
-Se analizará si los modelos de difusión pueden **generar datos sintéticos útiles** para mejorar el rendimiento de los detectores de objetos. También se comparará su impacto frente a otras técnicas tradicionales de data augmentation.
+Más allá de los resultados numéricos obtenidos, el verdadero valor de este Trabajo Fin de Grado radica en el **trabajo de experimentación e investigación exhaustiva** necesario para desarrollar un pipeline funcional como el que aquí se propone.
 
+El diseño, implementación y validación de un sistema de data augmentation basado en modelos de difusión no es una tarea trivial. Implica:
+
+- 📊 Analizar el comportamiento de distintos modelos de detección frente a datos clásicos y sintéticos.
+- 🔄 Adaptar los pipelines de entrenamiento para que acepten imágenes generadas artificialmente.
+- 🧪 Lanzar múltiples experimentos con datasets variados, ajustando hiperparámetros y estrategias de entrenamiento.
+- 🧱 Desarrollar código robusto y reutilizable para tareas críticas como la generación, conversión y evaluación de datos.
+
+Este proceso ha requerido **horas de pruebas, ajustes finos, resolución de errores y análisis de resultados**. En particular, la experimentación ha sido una de las partes más exigentes: cada entrenamiento consume recursos computacionales significativos y obliga a gestionar eficientemente el tiempo y la infraestructura.
+
+Por todo ello, este proyecto no solo aporta una solución funcional, sino que también refleja **la capacidad de llevar una idea compleja desde su concepción hasta su validación empírica**, pasando por todas las etapas intermedias de diseño, desarrollo y análisis crítico.
 ---
 ## 📌 **Autor**  
 **Alfonso Julián**  
@@ -214,7 +178,7 @@ Se analizará si los modelos de difusión pueden **generar datos sintéticos út
 ## 📅 **Periodo académico**  
 🗓️ 2024/2025  
 
-## 📑 **Investigación previa (Primer Cuatrimestre)**  
+## 📑 **Investigación previa (Primer Cuatrimestre) Repositorio en sucio :) **  
 🔗 [Trabajo de investigación previo del primer cuatrimestre](https://github.com/AlfonsoJulian/TrabajoPrimerCuatriTFG)  
 
 ---
