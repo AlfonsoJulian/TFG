@@ -166,7 +166,6 @@ El diseño, implementación y validación de un sistema de data augmentation bas
 - 🧱 Desarrollar código robusto y reutilizable para tareas críticas como la generación, conversión y evaluación de datos.
 
 Este proceso ha requerido **horas de pruebas, ajustes finos, resolución de errores y análisis de resultados**. En particular, la experimentación ha sido una de las partes más exigentes: cada entrenamiento consume recursos computacionales significativos y obliga a gestionar eficientemente el tiempo y la infraestructura.
-
 Por todo ello, este proyecto no solo aporta una solución funcional, sino que también refleja **la capacidad de llevar una idea compleja desde su concepción hasta su validación empírica**, pasando por todas las etapas intermedias de diseño, desarrollo y análisis crítico.
 ---
 ## 📌 **Autor**  
