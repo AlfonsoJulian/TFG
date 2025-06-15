@@ -3,10 +3,10 @@
 Este repositorio contiene el código y los experimentos de mi Trabajo de Fin de Grado (TFG), cuyo objetivo es **evaluar si los modelos de difusión pueden mejorar la detección de objetos a través de data augmentation**.
 
 Ejemplo de Forward process en Diffusion Models.
-![DiffusionModel](TFG/ImagenesGit/perturb_vp.gif)
+![DiffusionModel](ImagenesGit/perturb_vp.gif)
 
 Ejemplo de Reverse process en Diffusion Models.
-![DiffusionModel](TFG/ImagenesGit/denoise_vp.gif)
+![DiffusionModel](ImagenesGit/denoise_vp.gif)
 
 Gifts obtenidos de: https://aaronlou.com/blog/2023/reflected-diffusion/
 
