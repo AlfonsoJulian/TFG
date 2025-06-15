@@ -33,3 +33,13 @@ results_yolo_classic_augmented.txt
 runs/
 
 OD-WeaponDetection-master/
+
+
+annotations/
+
+diffusionenv/
+estructura.txt
+eval_like_paper/
+val_metrics_eval/
+val_metrics_eval3/
+val_metrics_eval_manual/
