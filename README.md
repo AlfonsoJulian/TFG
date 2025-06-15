@@ -41,7 +41,7 @@ Este proyecto busca responder a la pregunta:
 
 ## 💡 Propuesta
 
-![Imagen explicativa: Tipos de Data Augmentation](TFG/ImagenesGit/Propuesta.png)
+![Imagen explicativa: Tipos de Data Augmentation](ImagenesGit/Propuesta.png)
 
 La imagen anterior ilustra el objetivo principal: **mejorar la robustez de los modelos de detección** entrenándolos no solo con aumentos clásicos (como flips o recortes), sino también con imágenes sintéticas generadas mediante modelos de difusión.
 
@@ -88,7 +88,7 @@ El enfoque híbrido propuesto demuestra que la combinación de estrategias clás
 
 ## 📂 Estructura del Repositorio
 
-
+ 
 ```
 📁 TFG
 │── 📁 CreateDatasets        # Scripts para crear nuevas versiones de los datasets originales
