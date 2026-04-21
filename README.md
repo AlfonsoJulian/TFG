@@ -3,6 +3,7 @@
 
 Este repositorio contiene el código y los experimentos de mi Trabajo de Fin de Grado (TFG), cuyo objetivo es **evaluar si los modelos de difusión pueden mejorar la detección de objetos mediante técnicas de data augmentation**.
 
+> **Nota:** El TFG en pdf se encuentra en el archivo TFG_AZAPATA_firmado_MHB_AZAPATA.pdf
 ---
 
 ## 🌀 ¿Qué es un modelo de difusión?
